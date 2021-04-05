@@ -14,3 +14,6 @@ use Illuminate\Support\Facades\Route;
 */
 //home page
 Route::get('/', 'App\Http\Controllers\SiteController@home')->name('home');
+Route::prefix('admin')->group(function () {
+    Route::resource('tracks', 'App\Http\Controllers\Admin\TracksController');
+    });
